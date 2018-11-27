@@ -52,6 +52,30 @@ describe('BinaryTreeNode', () => {
     expect(rootNode.toString()).toBe('1,2,3');
   });
 
+  it('should traverse pre order', () => {
+    const leftNode = new BinaryTreeNode(1);
+    const rightNode = new BinaryTreeNode(3);
+    const rootNode = new BinaryTreeNode(2);
+
+    rootNode
+      .setLeft(leftNode)
+      .setRight(rightNode);
+
+    expect(rootNode.traversePreOrder()).toEqual([2, 1, 3]);
+  });
+
+  it('should traverse post order', () => {
+    const leftNode = new BinaryTreeNode(1);
+    const rightNode = new BinaryTreeNode(3);
+    const rootNode = new BinaryTreeNode(2);
+
+    rootNode
+      .setLeft(leftNode)
+      .setRight(rightNode);
+
+    expect(rootNode.traversePostOrder()).toEqual([1, 3, 2]);
+  });
+
   it('should remove child node', () => {
     const leftNode = new BinaryTreeNode(1);
     const rightNode = new BinaryTreeNode(3);
